@@ -1,4 +1,4 @@
-#include "main.h"
+#ginclude "main.h"
 /**
  * ptr_func - handle pointers' addresses
  * @list: list args
