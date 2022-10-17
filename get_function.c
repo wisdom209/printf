@@ -2,7 +2,8 @@
 
 int get_function(const char *format, va_list list, Choice choice[], int size)
 {
-	int i = 0, j = 0, count = 0, num = 0;
+	int i = 0, j = 0, count = 0, num = 0, width;
+
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
@@ -48,6 +49,7 @@ int get_function(const char *format, va_list list, Choice choice[], int size)
 							i = i + 3 + space;
 							break;
 						}
+
 					}
 				}
 			}

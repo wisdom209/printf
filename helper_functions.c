@@ -298,8 +298,8 @@ int plus_func_ptr(va_list list)
 int width_func(va_list list)
 {
 	char *s = va_arg(list, char *);
+	char *skip = "#0- +";
 	int i = 0, fieldw = 0;
-
 	for (; s[i]; i++)
 	{
 		if (isdigit(s[i]))
@@ -315,5 +315,15 @@ int width_func(va_list list)
 		else
 			break;
 	}
-	return (fieldw);
+	return (i);
+}
+int write_buffer(char buffer[], int count)
+{
+	int i = 0;
+	
+	for (; count > 0; i++, count--)
+	{
+		write(1, buffer[i], 1);
+	}
+	i = 0;
 }
