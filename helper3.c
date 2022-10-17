@@ -60,3 +60,57 @@ int hex_lower_func(va_list list)
 
 	return (a);
 }
+/**
+ * rev_func - base 16
+ * @list: list args
+ * Return: value
+ */
+int rev_func(va_list list)
+{
+	char *s = va_arg(list, char *);
+	int size = 0, i = 0;
+
+	while (s[size] != '\0')
+		size++;
+
+	for (i = size - 1; i >= 0; i--)
+		_putchar(s[i]);
+
+	return (size);
+}
+
+/**
+ * rot13 - rot13 encryption of strings
+ * @s: string to encrypt
+ *
+ * Return: encrypted string
+ */
+int rot13_func(va_list list)
+{
+	char *s = va_arg(list, char *);
+
+	char ref[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char src[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	int i = 0, j = 0;
+
+	while (s[i] != '\0')
+	{
+		j = 0;
+		while (ref[j] != '\0')
+		{
+			if (s[i] == ref[j])
+			{
+				_putchar(src[j]);
+				break;
+			}
+			j++;
+		}
+
+		if (s[i] != ref[j])
+			_putchar(s[i]);
+
+		i++;
+	}
+
+	return (i);
+}
