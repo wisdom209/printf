@@ -3,23 +3,7 @@
 
 
 
-int digit_func(va_list list)
-{
-	int numLen = -1;
-	int a = va_arg(list, int);
 
-	if (a <= INT_MAX && a >= INT_MIN)
-	{
-		numLen = print_number(a);
-	}
-	return (numLen);
-}
-
-int percent_func(__attribute__((unused)) va_list list)
-{
-	_putchar('%');
-	return (1);
-}
 
 int convert(unsigned long a, int base, int flag_upper, int flag_ptr)
 {

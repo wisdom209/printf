@@ -1,5 +1,21 @@
 #include "main.h"
 /**
+ * digit_func - print normal digits
+ * @list: list of args
+ * Return: length
+ */
+int digit_func(va_list list)
+{
+	int numLen = -1;
+	int a = va_arg(list, int);
+
+	if (a <= INT_MAX && a >= INT_MIN)
+	{
+		numLen = print_number(a);
+	}
+	return (numLen);
+}
+/**
  * print_number - prints signed numbers
  * @n: parameter
  * Return: count
