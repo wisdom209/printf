@@ -38,6 +38,16 @@ int _printf(const char *format, ...)
 			{"+X", hex_upper_func},
 			{"+s", str_func},
 			{"+c", char_func},
+			{" i", space_func_num},
+			{" d", space_func_num},
+			{" ptr", space_func_ptr},
+			{" b", binary_func},
+			{" x", hex_lower_func},
+			{" X", hex_upper_func},
+			{" s", str_func},
+			{" c", char_func},
+			{"#o", mod_octal_func},
+			{"#x", mod_hex_func},
 			{NULL, NULL}};
 
 	va_start(ptr, format);

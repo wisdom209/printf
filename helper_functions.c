@@ -52,6 +52,7 @@ int plus_func_ptr(va_list list)
 	return (num + 1);
 }
 
+
 /**
  * width_func - handles field width
  * @list: list args
@@ -93,4 +94,53 @@ void write_buffer(char buffer[], int count)
 		write(1, &buffer[i], 1);
 	}
 	i = 0;
+
+int space_func_num(va_list list)
+{
+
+	int num = va_arg(list, int);
+
+	if (num < 0)
+	{
+		num = print_number(num);
+		return (num);
+	}
+
+	_putchar(' ');
+	num = print_number(num);
+
+	return (num + 1);
+}
+
+int space_func_ptr(va_list list)
+{
+
+	int num = 0;
+
+	_putchar(' ');
+	num = ptr_func(list);
+
+	return (num + 1);
+}
+
+int mod_octal_func(va_list list)
+{
+	int num = 0;
+
+	_putchar('0');
+
+	num = octal_func(list);
+
+	return (num + 1);
+}
+
+int mod_hex_func(va_list list)
+{	
+	int num;
+	_putchar('0');
+	_putchar('x');
+	
+	num = hex_lower_func(list);
+
+	return (num + 2);
 }

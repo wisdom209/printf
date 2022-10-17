@@ -5,6 +5,12 @@
             "label": "C/C++: gcc-11 build active file",
             "command": "/usr/bin/gcc-11",
             "args": [
+                "-Wall",
+                "-Werror",
+                "-Wextra",
+                "-pedantic",
+                "-Wno-format",
+                "-std=gnu89",
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
