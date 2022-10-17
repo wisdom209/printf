@@ -14,11 +14,13 @@ int get_function(const char *format, va_list list, Choice choice[], int size)
 		{
 			for (j = 0; j < size; j++)
 			{
-				if (format[i + 1] == choice[j].specifier[0] && choice[j].specifier[0] != '+')
+				if (choice[j].specifier)
+				{
+					if (format[i + 1] == choice[j].specifier[0] && choice[j].specifier[0] != '+')
 					{
 						num = choice[j].f(list);
 						count += num;
-						i++;
+						i += 2;
 						break;
 					}
 					if (format[i + 1] == '+' && (format[i + 2] == choice[j].specifier[1]))
@@ -28,6 +30,26 @@ int get_function(const char *format, va_list list, Choice choice[], int size)
 						i += 2;
 						break;
 					}
+					if (format[i + 1] == '+' && (format[i + 2] == ' '))
+					{
+						int k = 3;
+						int space = 0;
+
+						while (format[k] == ' ')
+						{
+							k++;
+							space++;
+						}
+
+						if (format[k] == choice[j].specifier[1])
+						{
+							num = choice[j].f(list);
+							count += num;
+							i = i + 3 + space;
+							break;
+						}
+					}
+				}
 			}
 		}
 	}
