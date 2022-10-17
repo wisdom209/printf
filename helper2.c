@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * convert - base converter
  * @a: number to be converted
@@ -59,3 +59,46 @@ int percent_func(__attribute__((unused)) va_list list)
 	_putchar('%');
 	return (1);
 }
+/**
+ * binary_func - base 2
+ * @list: list args
+ * Return: from convert function
+ */
+int binary_func(va_list list)
+{
+	int b = va_arg(list, unsigned int);
+	int a = convert(b, 2, 1, 0);
+
+	return (a);
+}
+
+/**
+ * unsig_int_func - print unsigned int
+ * @list: list args
+ * Return: value
+ */
+int unsig_int_func(va_list list)
+{
+	unsigned int n = va_arg(list, unsigned int);
+
+	if (n > UINT_MAX)
+		n = n - UINT_MAX - 1;
+
+	print_number(n);
+	return (0);
+}
+
+/**
+ * hex_upper_func - base 16
+ * @list: list args
+ * Return: value
+ */
+int hex_upper_func(va_list list)
+{
+	int num = va_arg(list, unsigned int);
+	int a = convert(num, 16, 1, 0);
+
+	return (a);
+}
+
+
