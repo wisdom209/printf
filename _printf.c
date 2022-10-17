@@ -30,9 +30,9 @@ int _printf(const char *format, ...)
 			{"r", rev_func},
 			{"R", rot13_func},
 			{"p", ptr_func},
-			/* {"+i",plus_func},
-			{"+d",plus_func},
-			{"+ptr",plus_func}, */
+			{"+i",plus_func_num},
+			{"+d",plus_func_num},
+			{"+ptr",plus_func_ptr},
 			{"+b", binary_func},
 			{"+x", hex_lower_func},
 			{"+X", hex_upper_func},

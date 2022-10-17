@@ -255,7 +255,7 @@ int rot13_func(va_list list)
 
 		i++;
 	}
-	
+
 	return (i);
 }
 
@@ -267,8 +267,20 @@ int ptr_func(va_list list)
 	_putchar('0');
 	_putchar('x');
 	count = convert(ptr, 16, 0, 1);
-	
+
 	return (count + 2);
 }
 
+int plus_func_num(va_list list)
+{
+	_putchar('+');
+	int num = digit_func(list);
+	return (num + 1);
+}
 
+int plus_func_ptr(va_list list)
+{
+	_putchar('+');
+	int num = ptr_func(list);
+	return (num + 1);
+}
