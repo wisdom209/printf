@@ -32,7 +32,38 @@ typedef struct Choice
 	int (*f)(va_list list);
 } Choice;
 
+/* helper_functions  */
 int width_func(va_list list);
 int _putchar(char c);
 int print_char(va_list list);
+LoopReturn nextFuncton(const char *current, Choice check, int i, va_list list);
+int get_function(const char *format, va_list list, Choice choice[], int size);
+int _printf(const char *format, ...);
+
+/* helper.4 */
+int space_func_num(va_list list);
+int space_func_ptr(va_list list);
+int mod_octal_func(va_list list);
+int mod_hex_func(va_list list);
+
+/* helper.3 */
+int octal_func(va_list list);
+int stringupperCase_func(va_list list);
+int hex_lower_func(va_list list);
+int rev_func(va_list list);
+int rot13_func(va_list list);
+
+/* helper2.c */
+int convert(unsigned long a, int base, int flag_upper, int flag_ptr);
+int percent_func(__attribute__((unused)) va_list list);
+int binary_func(va_list list);
+int unsig_int_func(va_list list);
+int hex_upper_func(va_list list);
+
+/* helper1.c */
+int digit_func(va_list list);
+int print_number(long int n);
+int _putchar(char c);
+int char_func(va_list list);
+int str_func(va_list list);
 #endif

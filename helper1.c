@@ -1,6 +1,5 @@
 #include "main.h"
 
-int print_number(long int n);
 /**
  * digit_func - print normal digits
  * @list: list of args
