@@ -295,3 +295,25 @@ int plus_func_ptr(va_list list)
 
 	return (num + 1);
 }
+int width_func(va_list list)
+{
+	char *s = va_arg(list, char *);
+	int i = 0, fieldw = 0;
+
+	for (; s[i]; i++)
+	{
+		if (isdigit(s[i]))
+		{
+			fieldw = fieldw * 10 + (s[i] - '0');
+		}
+		if (s[i] == '*')
+		{
+			i++;
+			fieldw = va_arg(list, int);
+			break;
+		}
+		else
+			break;
+	}
+	return (fieldw);
+}
