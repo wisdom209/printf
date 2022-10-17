@@ -317,13 +317,13 @@ int width_func(va_list list)
 	}
 	return (i);
 }
-int write_buffer(char buffer[], int count)
+void write_buffer(char buffer[], int count)
 {
 	int i = 0;
 	
 	for (; count > 0; i++, count--)
 	{
-		write(1, buffer[i], 1);
+		write(1, &buffer[i], 1);
 	}
 	i = 0;
 }
