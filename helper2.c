@@ -100,5 +100,3 @@ int hex_upper_func(va_list list)
 
 	return (a);
 }
-
-
