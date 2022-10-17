@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdint.h>
+#include <math.h>
 
 /**
  * Choice - name of struct for choosing function

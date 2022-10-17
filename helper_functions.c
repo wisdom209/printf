@@ -80,7 +80,6 @@ int digit_func(va_list list)
 	{
 		numLen = print_number(a);
 	}
-
 	return (numLen);
 }
 
@@ -273,14 +272,26 @@ int ptr_func(va_list list)
 
 int plus_func_num(va_list list)
 {
+	int num = va_arg(list, int);
+
+	if (num < 0)
+	{
+		num = print_number(num);
+		return (num);
+	}
+
 	_putchar('+');
-	int num = digit_func(list);
+	num = print_number(num);
+
 	return (num + 1);
 }
 
 int plus_func_ptr(va_list list)
 {
+	int num = 0;
+
 	_putchar('+');
-	int num = ptr_func(list);
+	num = ptr_func(list);
+
 	return (num + 1);
 }
