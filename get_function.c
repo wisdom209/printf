@@ -1,5 +1,14 @@
 #include "main.h"
 
+typedef struct
+{
+	int count;
+	int i;
+} LoopReturn;
+
+LoopReturn nextFuncton(const char *current, Choice choice, int i, va_list list);
+
+LoopReturn lp;
 int get_function(const char *format, va_list list, Choice choice[], int size)
 {
 	int i = 0, j = 0, count = 0, num = 0;
@@ -17,109 +26,17 @@ int get_function(const char *format, va_list list, Choice choice[], int size)
 			{
 				if (choice[j].specifier)
 				{
-					if (format[i + 1] == choice[j].specifier[0] && choice[j].specifier[0] != '+' && choice[j].specifier[0] != ' ')
-					{
-
-						num = choice[j].f(list);
-						count += num;
-						if (choice[j].specifier[1])
-							i += 2;
-						else
-							i += 1;
-						break;
-					}
-
-					/* for plus symbol */
-
-					if (format[i + 1] == '+' && (format[i + 2] == choice[j].specifier[1]))
+					if (format[i + 1] == choice[j].specifier[0] && !choice[j].specifier[1])
 					{
 						num = choice[j].f(list);
 						count += num;
-						i += 2;
-
+						i += 1;
 						break;
 					}
-					if (format[i + 1] == '+' && (format[i + 2] == ' '))
-					{
-
-						int k = 3;
-						int space = 0;
-
-						while (format[k] == ' ')
-						{
-							k++;
-							space++;
-						}
-
-						if (format[k] == choice[j].specifier[1])
-						{
-							num = choice[j].f(list);
-							count += num;
-							i = i + 3 + space;
-							break;
-						}
-					}
-
-					/* for space symbol */
-					if (format[i + 1] == ' ' && (format[i + 2] == choice[j].specifier[1] && choice[j].specifier[0] == ' '))
-					{
-						num = choice[j].f(list);
-						count += num;
-						i += 2;
-						break;
-					}
-					if (format[i + 1] == ' ' && (format[i + 2] == ' '))
-					{
-
-						int k = 3;
-						int space = 0;
-
-						while (format[k] == ' ')
-						{
-							k++;
-							space++;
-						}
-
-						if (format[k] == choice[j].specifier[1] && choice[j].specifier[0] == ' ')
-						{
-							num = choice[j].f(list);
-							count += num;
-							i = i + 3 + space;
-							break;
-						}
-					}
-
-					/* check for # symbol */
-
-					if (format[i + 1] == '#' && (format[i + 2] == choice[j].specifier[1]))
-					{
-						/* printf("octal mod\n"); */
-						num = choice[j].f(list);
-						count += num;
-						i += 4;
-
-						break;
-					}
-					if (format[i + 1] == '#' && (format[i + 2] == choice[j].specifier[1] && format[i + 3] == ' '))
-					{
-
-						int k = 4;
-						int space = 0;
-
-						while (format[k] == ' ')
-						{
-							k++;
-							space++;
-						}
-
-						if (format[k] == choice[j].specifier[1])
-						{
-							num = choice[j].f(list);
-							count += num;
-							i = i + 4 + space;
-							break;
-						}
-					}
+				}
+				if (choice[j].specifier && choice[j].specifier[1])
+				{
+					lp = nextFuncton(format, choice[j], i, list);
 				}
 			}
 		}
@@ -129,20 +46,13 @@ int get_function(const char *format, va_list list, Choice choice[], int size)
 	return (count);
 }
 
-/* int loop_selection(char * format,Choice *choice, char symbola, char symbolb, int i, int j, int num)
+LoopReturn lt;
+LoopReturn nextFuncton(const char *current, Choice check, int i, va_list list)
 {
-
-	if (format[i + 1] == choice[j].specifier[0] && choice[j].specifier[0] != '+' && choice[j].specifier[0] != ' ')
+	if (current[i + 2] == check.specifier[1] && check.specifier[0] == '+')
 	{
-
-		num = choice[j].f(list);
-		count += num;
-		if (choice[j].specifier[1])
-			i += 2;
-		else
-			i += 1;
-		break;
+		lt.count = check.f(list);
 	}
-
-	return (count)
-} */
+		lt.i = i+ 2;
+	return (lt);
+}
