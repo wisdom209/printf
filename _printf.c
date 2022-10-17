@@ -1,5 +1,7 @@
 #include "main.h"
-#include "helper_functions.c"
+#include "helper1.c"
+#include "helper2.c"
+#include "helper3.c"
 #include "get_function.c"
 
 /**
@@ -46,8 +48,8 @@ int _printf(const char *format, ...)
 			{" X", hex_upper_func},
 			{" s", str_func},
 			{" c", char_func},
-			{"#o", mod_octal_func},
-			{"#x", mod_hex_func},
+			/* {"#o", mod_octal_func},
+			{"#x", mod_hex_func}, */
 			{NULL, NULL}};
 
 	va_start(ptr, format);
