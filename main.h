@@ -11,11 +11,21 @@
 #include <ctype.h>
 
 /**
- * Choice - name of struct for choosing function
- * @format: format specifier
+ * struct LoopReturn - loop return
+ * @count: member 1
+ * @i: member 2
+ */
+typedef struct LoopReturn
+{
+	int count;
+	int i;
+} LoopReturn;
+
+/**
+ * struct Choice - name of struct for choosing function
+ * @specifier: format specifier
  * @f: pointer to function to call
  */
-
 typedef struct Choice
 {
 	char *specifier;

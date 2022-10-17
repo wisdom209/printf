@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * octal_func - base 8
  * @list: list args
@@ -13,7 +14,7 @@ int octal_func(va_list list)
 }
 /**
  * stringupperCase_func - replace non printable
- * list: list args
+ * @list: list args
  * Return: length
  */
 int stringupperCase_func(va_list list)
@@ -49,7 +50,7 @@ int stringupperCase_func(va_list list)
 	return (count);
 }
 /**
- * hex_upper_func - base 16
+ * hex_lower_func - base 16
  * @list: list args
  * Return: value
  */
@@ -80,8 +81,8 @@ int rev_func(va_list list)
 }
 
 /**
- * rot13 - rot13 encryption of strings
- * @s: string to encrypt
+ * rot13_func - rot13 encryption of strings
+ * @list: string to encrypt
  *
  * Return: encrypted string
  */

@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * convert - base converter
  * @a: number to be converted
@@ -11,8 +12,8 @@ int convert(unsigned long a, int base, int flag_upper, int flag_ptr)
 {
 	unsigned int num = (unsigned int)a;
 	int i = 0;
-	static char Representation[] = "0123456789ABCDEF";
-	static char sRepresentation[] = "0123456789abcdef";
+	static const char Representation[] = "0123456789ABCDEF";
+	static const char sRepresentation[] = "0123456789abcdef";
 	static char buffer[50];
 	char *ptr;
 
@@ -21,16 +22,14 @@ int convert(unsigned long a, int base, int flag_upper, int flag_ptr)
 
 	if (flag_ptr == 1)
 	{
-		do
-		{
+		do {
 			*--ptr = sRepresentation[a % base];
 			a /= base;
 		} while (a != 0);
 	}
 	else
 	{
-		do
-		{
+		do {
 			if (flag_upper == 1)
 				*--ptr = Representation[num % base];
 			else

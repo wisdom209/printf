@@ -1,4 +1,6 @@
 #include "main.h"
+
+int print_number(long int n);
 /**
  * digit_func - print normal digits
  * @list: list of args
@@ -22,7 +24,7 @@ int digit_func(va_list list)
  */
 int print_number(long int n)
 {
-	static int count = 0;
+	static int count;
 
 	unsigned int x = 0;
 
@@ -54,6 +56,7 @@ int print_number(long int n)
 int _putchar(char c)
 {
 	int i = write(1, &c, 1);
+
 	return (i);
 }
 
@@ -66,6 +69,7 @@ int _putchar(char c)
 int char_func(va_list list)
 {
 	char c = va_arg(list, int);
+
 	_putchar(c);
 
 	return (1);

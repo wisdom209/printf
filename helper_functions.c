@@ -1,4 +1,4 @@
-#ginclude "main.h"
+#include "main.h"
 /**
  * ptr_func - handle pointers' addresses
  * @list: list args
@@ -60,8 +60,9 @@ int plus_func_ptr(va_list list)
 int width_func(va_list list)
 {
 	char *s = va_arg(list, char *);
-	char *skip = "#0- +";
+	/* char *skip = "#0- +"; */
 	int i = 0, fieldw = 0;
+
 	for (; s[i]; i++)
 	{
 		if (isdigit(s[i]))
@@ -81,13 +82,13 @@ int width_func(va_list list)
 }
 /**
  * write_buffer - buffer to reduce write call
- * @buffer - buffer of size 1024
+ * @buffer: buffer of size 1024
  * @count: count of words to be read from buffer
  */
 void write_buffer(char buffer[], int count)
 {
 	int i = 0;
-	
+
 	for (; count > 0; i++, count--)
 	{
 		write(1, &buffer[i], 1);

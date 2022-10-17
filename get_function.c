@@ -1,17 +1,39 @@
 #include "main.h"
 
-typedef struct
+/**
+ * nextFunction - next function
+ * @current: current format
+ * @check: choice to check against
+ * @i: param i
+ * @list: struct
+ *
+ * Return: loop return
+ */
+LoopReturn nextFuncton(const char *current, Choice check, int i, va_list list)
 {
-	int count;
-	int i;
-} LoopReturn;
+	LoopReturn lt;
 
-LoopReturn nextFuncton(const char *current, Choice choice, int i, va_list list);
+	if (current[i + 2] == check.specifier[1] && check.specifier[0] == '+')
+	{
+		lt.count = check.f(list);
+	}
+	lt.i = i + 2;
+	return (lt);
+}
 
-LoopReturn lp;
+/**
+ * get_function - gets needed function
+ * @format: string
+ * @list: variadic list
+ * @choice: variadic struct
+ * @size: size of struct
+ *
+ * Return: size of formatted string
+ */
 int get_function(const char *format, va_list list, Choice choice[], int size)
 {
 	int i = 0, j = 0, count = 0, num = 0;
+	/* LoopReturn lp; */
 
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
@@ -36,7 +58,7 @@ int get_function(const char *format, va_list list, Choice choice[], int size)
 				}
 				if (choice[j].specifier && choice[j].specifier[1])
 				{
-					lp = nextFuncton(format, choice[j], i, list);
+					nextFuncton(format, choice[j], i, list);
 				}
 			}
 		}
@@ -44,15 +66,4 @@ int get_function(const char *format, va_list list, Choice choice[], int size)
 	if (format == NULL)
 		return (-1);
 	return (count);
-}
-
-LoopReturn lt;
-LoopReturn nextFuncton(const char *current, Choice check, int i, va_list list)
-{
-	if (current[i + 2] == check.specifier[1] && check.specifier[0] == '+')
-	{
-		lt.count = check.f(list);
-	}
-		lt.i = i+ 2;
-	return (lt);
 }
