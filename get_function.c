@@ -14,32 +14,20 @@ int get_function(const char *format, va_list list, Choice choice[], int size)
 		{
 			for (j = 0; j < size; j++)
 			{
-				if (choice[j].specifier)
-				{
-					if ((format[i + 1] == choice[j].specifier[0]) ||
-						(format[i + 1] == choice[j].specifier[0] &&
-						 format[i + 2] == choice[j].specifier[1]))
+				if (format[i + 1] == choice[j].specifier[0] && choice[j].specifier[0] != '+')
 					{
 						num = choice[j].f(list);
 						count += num;
 						i++;
-						if (choice[j].specifier[1] != '\0')
-							i++;
 						break;
 					}
-				}
-			}
-			if (choice[i].specifier == NULL && format[i + 1] != ' ')
-			{
-				if (format[i + 1] != 0)
-				{
-					_putchar(format[i]);
-					_putchar(format[i + 1]);
-					count += 2;
-					i++;
-				}
-				else
-					return (-1);
+					if (format[i + 1] == '+' && (format[i + 2] == choice[j].specifier[1]))
+					{
+						num = choice[j].f(list);
+						count += num;
+						i += 2;
+						break;
+					}
 			}
 		}
 	}
