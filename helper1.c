@@ -84,6 +84,9 @@ int str_func(va_list list)
 	char *s = va_arg(list, char *);
 	int i = 0;
 
+	if (s == NULL)
+		s = "(null)";
+
 	while (s[i] != '\0')
 	{
 		_putchar(s[i]);
