@@ -2,9 +2,11 @@
 
 Authors - Oluwatobi Amure, Ononiwu Wisdom.
 
-A project to make our own printf function, as a fufillment of part of the requirements of the Full Stack Software Engineering programme offered by African Leadership Xcellerator (ALX), an arm of the African Leadership Group (ALG) which recently acquired the Holberton School of coding.
+A project to make our own printf function, as a fufillment of part of the requirements of the Full Stack Software Engineering programme, offered by African Leadership Xcellerator (ALX), an arm of the African Leadership Group (ALG) which recently acquired the Holberton School of coding.
 
-This project mimics the printf function from the standard library. For a detailed information on the use and functionaity, read the manual provided in this repository.
+This project mimics the printf function from the C standard library. 
+
+For a detailed information on the use and functionaity, read the manual; **man_3_printf** provided in this repository.
 
 ## Concepts
 For this project, we expect you to look at these concepts:
