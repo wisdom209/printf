@@ -94,7 +94,7 @@ int width_func(va_list list, int width, int minus_flag, char sp_match, Choice ch
 		{
 			_putchar(' ');
 		}
-		for (; choice[i].specifier != NULL; i++)
+		for (i = 0; choice[i].specifier != NULL; i++)
 		{
 			if (specifier == choice[i].specifier[0])
 			{
