@@ -88,7 +88,8 @@ As a consequence, be careful not to push any c file containing a main function i
 Our main files will include your main header file (main.h): #include main.h
 
 You might want to look at the ```gcc flag -Wno-format``` when testing with your _printf and the standard printf. Example of test file that you could use:
-```alex@ubuntu:~/c/printf$ cat main.c 
+```
+alex@ubuntu:~/c/printf$ cat main.c 
 #include <limits.h>
 #include <stdio.h>
 #include "main.h"
@@ -159,13 +160,13 @@ Len:[12]
 Len:[12]
 Unknown:[%r]
 Unknown:[%r]
-alex@ubuntu:~/c/printf$```
-
+alex@ubuntu:~/c/printf$
+```
 We were strongly encouraged to work altogether on every set of tests
 
 If the task does not specify what to do with an edge case, do the same as printf
 
-##Copyright - Plagiarism
+## Copyright - Plagiarism
 
 You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
 
