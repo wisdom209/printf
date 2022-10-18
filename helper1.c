@@ -25,7 +25,7 @@ int digit_func(va_list list)
  * @n: parameter
  * Return: count
  */
-int print_number(long int n)
+int print_number(int n)
 {
 	static int count;
 
