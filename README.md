@@ -129,5 +129,11 @@ Len:[12]
 Unknown:[%r]
 Unknown:[%r]
 alex@ubuntu:~/c/printf$
-We strongly encourage you to work all together on a set of tests
+We were strongly encouraged to work altogether on every set of tests
 If the task does not specify what to do with an edge case, do the same as printf
+
+Copyright - Plagiarism
+You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
+You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
+You are not allowed to publish any content of this project.
+Any form of plagiarism is strictly forbidden and will result in removal from the program.
