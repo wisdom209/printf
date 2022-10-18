@@ -5,7 +5,7 @@
  * @n: parameter
  * Return: count
  */
-int print_int_func(int n)
+int print_int_func(long int n)
 {
 	static int count;
 
