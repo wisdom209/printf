@@ -67,7 +67,7 @@ int hex_upper_func(va_list list);
 
 /* helper1.c */
 int digit_func(va_list list);
-int print_number(long int n);
+int print_number(int n);
 int _putchar(char c);
 int char_func(va_list list);
 int str_func(va_list list);
