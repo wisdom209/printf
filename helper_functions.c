@@ -7,9 +7,10 @@
 int ptr_func(va_list list)
 {
 	int count = 0;
+	void *addrs = va_arg(list, void *);
 	uintptr_t ptr = (uintptr_t)va_arg(list, void *);
 
-	if (ptr == NULL)
+	if (addrs == NULL)
 	{
 		char *s = "nill";
 
