@@ -80,13 +80,15 @@ int binary_func(va_list list)
  */
 int unsig_int_func(va_list list)
 {
-	unsigned int n = va_arg(list, unsigned int);
+	unsigned long int n = va_arg(list, unsigned int);
+	int count = 0;
 
 	if (n > UINT_MAX)
 		n = n - UINT_MAX - 1;
 
-	print_number(n);
-	return (0);
+	count = print_number(n);
+
+	return (count);
 }
 
 /**

@@ -63,9 +63,10 @@ int stringupperCase_func(va_list list)
 int hex_lower_func(va_list list)
 {
 	int num = va_arg(list, unsigned int);
-	int a = convert(num, 16, 0, 1);
 
-	return (a);
+	num = convert(num, 16, 0, 0);
+
+	return (num);
 }
 /**
  * rev_func - base 16
