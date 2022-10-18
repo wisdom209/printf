@@ -1,4 +1,4 @@
-Group Project - Our Own printf
+# Group Project - Our Own printf
 
 Authors - Oluwatobi Amure, Ononiwu Wisdom.
 
@@ -6,7 +6,7 @@ A project to make our own printf function, as a fufillment of part of the requir
 
 This project mimics the printf function from the standard library. For a detailed information on the use and functionaity, read the manual provided in this repository.
 
-Concepts
+## Concepts
 For this project, we expect you to look at these concepts:
 
 Group Projects
@@ -17,7 +17,7 @@ Flowcharts
 
 Technical Writing
 
-Resources
+## Resources
 Read or watch:
 
 Secrets of printf
@@ -26,12 +26,12 @@ Group Projects concept page (Don’t forget to read this)
 
 Flowcharts concept page
 
-man or help:
+**man or help:**
 printf (3)
 
-Requirements
+## Requirements
 
-General
+### General
 
 Allowed editors: vi, vim, emacs
 
@@ -58,7 +58,7 @@ All your header files should be include guarded
 
 Note that we will not provide the _putchar function for this project
 
-Important Instructions Concerning Group Projects on Github
+### Important Instructions Concerning Group Projects on Github
 
 Both partners need to have equal as possible git commits to the master branch as possible; the farther 
 from “equal”, the overall score of the project will decrease.
@@ -67,7 +67,7 @@ Equal as possible == no more than a 40/60 contribution from the respective partn
 
 Also, there should be one project repository per group. The other members do not fork or clone the project to ensure only one of the team has the repository in their github account otherwise you risk scoring 0%
 
-Authorized functions and macros
+## Authorized functions and macros
 write (man 2 write)
 malloc (man 3 malloc)
 free (man 3 free)
@@ -75,9 +75,9 @@ va_start (man 3 va_start)
 va_end (man 3 va_end)
 va_copy (man 3 va_copy)
 va_arg (man 3 va_arg)
-Compilation
+## Compilation
 Your code will be compiled this way:
-$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
+```$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c```
 As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions)
 Our main files will include your main header file (main.h): #include main.h
 You might want to look at the gcc flag -Wno-format when testing with your _printf and the standard printf. Example of test file that you could use:
