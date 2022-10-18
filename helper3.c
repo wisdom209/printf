@@ -7,8 +7,8 @@
  */
 int octal_func(va_list list)
 {
-	int num = va_arg(list, unsigned int);
-	int a = convert(num, 8, 0, 0);
+	unsigned long int num = va_arg(list, unsigned int);
+	int a = convert(num, 8, 0, 1);
 
 	return (a);
 }
@@ -56,8 +56,8 @@ int stringupperCase_func(va_list list)
  */
 int hex_lower_func(va_list list)
 {
-	int num = va_arg(list, unsigned int);
-	int a = convert(num, 16, 0, 0);
+	unsigned long int num = va_arg(list, unsigned int);
+	int a = convert(num, 16, 0, 1);
 
 	return (a);
 }
