@@ -26,9 +26,12 @@ int stringupperCase_func(va_list list)
 	if (s == NULL)
 		return (write(1, "(null)", 6));
 
+	if (s[i] < 0)
+		s[i] = s[i] * -1;
+
 	while (s[i] != '\0')
 	{
-		if (!(s[i] > 32 && s[i] < 127))
+		if (!(s[i] >= 32 && s[i] < 127))
 		{
 			_putchar('\\');
 			_putchar('x');
