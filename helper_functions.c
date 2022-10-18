@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * ptr_func - handle pointers' addresses
- * @list: list args
+ * @list: pointer to list arguments
  * Return: value
  */
 int ptr_func(va_list list)
