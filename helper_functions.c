@@ -69,28 +69,40 @@ int plus_func_ptr(va_list list)
  * @list: list args
  * Return: value
  */
-int width_func(va_list list)
+int width_func(va_list list, int width, int minus_flag, char sp_ma, Choice choice[])
 {
-	char *s = va_arg(list, char *);
-	/* char *skip = "#0- +"; */
-	int i = 0, fieldw = 0;
+	int i = 0, count = 0, j;
 
-	for (; s[i]; i++)
+	if (flag != 0)
 	{
-		if (isdigit(s[i]))
+		for (; choice[i].specifier != NULL; i++)
 		{
-			fieldw = fieldw * 10 + (s[i] - '0');
+			if (specifier == choice[i].specifier[0])
+			{
+				count = choice[i].f;
+			}
 		}
-		if (s[i] == '*')
+		for (j = 0; j < width; j++)
 		{
-			i++;
-			fieldw = va_arg(list, int);
-			break;
+			_putchar(' ');
+			count++;
 		}
-		else
-			break;
 	}
-	return (i);
+	else
+	{
+		for (j = 0; j < width; j++)
+		{
+			_putchar(' ');
+		}
+		for (; choice[i].specifier != NULL; i++)
+		{
+			if (specifier == choice[i].specifier[0])
+			{
+				count = choice[i].f;
+			}
+		}
+	}
+
 }
 /**
  * write_buffer - buffer to reduce write call
