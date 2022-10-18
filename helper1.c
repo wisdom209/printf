@@ -25,7 +25,7 @@ int digit_func(va_list list)
  * @n: parameter
  * Return: count
  */
-int print_number(long n)
+int print_number(int n)
 {
 	unsigned int b;
 	unsigned int reverseN = 0;
