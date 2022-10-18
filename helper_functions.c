@@ -30,7 +30,7 @@ int ptr_func(va_list list)
 
 /**
  * plus_func_num - plus flag
- * @list: pointer t ist arguments
+ * @list: pointer to list arguments
  * Return: length
  */
 int plus_func_num(va_list list)
