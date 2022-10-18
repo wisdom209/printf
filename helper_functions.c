@@ -31,7 +31,7 @@ int ptr_func(va_list list)
 /**
  * plus_func_num - plus flag
  * @list: list args
- * Return: value
+ * Return: length
  */
 int plus_func_num(va_list list)
 {
