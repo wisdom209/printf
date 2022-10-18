@@ -69,7 +69,7 @@ int plus_func_ptr(va_list list)
  * @list: list args
  * Return: value
  */
-int width_func(va_list list, int width, int minus_flag, char sp_ma, Choice choice[])
+int width_func(va_list list, int width, int minus_flag, char sp_match, Choice choice[])
 {
 	int i = 0, count = 0, j;
 
@@ -77,7 +77,7 @@ int width_func(va_list list, int width, int minus_flag, char sp_ma, Choice choic
 	{
 		for (; choice[i].specifier != NULL; i++)
 		{
-			if (specifier == choice[i].specifier[0])
+			if (sp_match == choice[i].specifier[0])
 			{
 				count = choice[i].f;
 			}
