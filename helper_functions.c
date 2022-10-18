@@ -7,18 +7,20 @@
 int ptr_func(va_list list)
 {
 	int count = 0;
-	void *addrs = va_arg(list, void *);
 	uintptr_t ptr = (uintptr_t)va_arg(list, void *);
 
-	if (addrs == NULL)
+	if (ptr == 0)
 	{
-		char *s = "nill";
+		char *s = "(nil)";
 
 		while (s[count] != '\0')
+		{
+			_putchar(s[count]);
 			count++;
+		}
+
 		return (count);
 	}
-
 	_putchar('0');
 	_putchar('x');
 	count = convert(ptr, 16, 0, 1);
