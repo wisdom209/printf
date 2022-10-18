@@ -11,7 +11,7 @@ int digit_func(va_list list)
 
 	if (n <= INT_MAX && n >= INT_MIN)
 	{
-		n = print_int_func(n);
+		n = print_number(n);
 	}
 	else
 	{
