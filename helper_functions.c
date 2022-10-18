@@ -70,7 +70,7 @@ int plus_func_ptr(va_list list)
  * @width: width parameter received
  * @flag: check for minus flag
  * @match: check for match
- * @choice: array of structs previousy decared
+ * @choice: array of structs previously declared
  * Return: value
  */
 int width_func(va_list list, int width, int flag, char match, Choice choice[])
