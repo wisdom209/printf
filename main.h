@@ -32,13 +32,17 @@ typedef struct Choice
 	int (*f)(va_list list);
 } Choice;
 
+int _printf(const char *format, ...);
+
 /* helper_functions  */
 int width_func(va_list list);
 int _putchar(char c);
 int print_char(va_list list);
+int ptr_func(va_list list);
+int plus_func_num(va_list list);
+int plus_func_ptr(va_list list);
 LoopReturn nextFuncton(const char *current, Choice check, int i, va_list list);
 int get_function(const char *format, va_list list, Choice choice[], int size);
-int _printf(const char *format, ...);
 
 /* helper.4 */
 int space_func_num(va_list list);
@@ -66,4 +70,5 @@ int print_number(long int n);
 int _putchar(char c);
 int char_func(va_list list);
 int str_func(va_list list);
+
 #endif
