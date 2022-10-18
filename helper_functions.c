@@ -51,8 +51,8 @@ int plus_func_num(va_list list)
 
 /**
  * plus_func_ptr - plus flag
- * @list: list args
- * Return: value
+ * @list: pointer to list arguments
+ * Return: length
  */
 int plus_func_ptr(va_list list)
 {
