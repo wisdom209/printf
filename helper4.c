@@ -24,7 +24,7 @@ int space_func_ptr(va_list list)
 }
 
 /**
- * space_func_ptr - space ptr
+ * mod_octal_func - space ptr
  * @list: list args
  * Return: num
  */

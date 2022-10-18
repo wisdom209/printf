@@ -1,6 +1,8 @@
 #include "main.h"
 
-int _loopExtraction(Choice choice[], const char *format, int size, int *i, va_list list, int *count);
+int _loopExtraction(Choice choice[], const char *format, int size,
+int *i,
+va_list list, int *count);
 /**
  * nextFunction - next function
  * @current: current format
@@ -56,7 +58,19 @@ int get_function(const char *format, va_list list, Choice choice[], int size)
 }
 
 
-int _loopExtraction(Choice choice[], const char *format, int size, int *i, va_list list, int *count)
+/**
+ * _loopExtraction -  extracts loop
+ * @choice: choice arr
+ * @format: format str
+ * @size: size of format str
+ * @i: iterator
+ * @list: variadic list
+ * @count: str count
+ *
+ * Return: -1 if unsuccessful
+ */
+int _loopExtraction(Choice choice[], const char *format, int size, int *i,
+va_list list, int *count)
 {
 	int j = 0, num = 0;
 
