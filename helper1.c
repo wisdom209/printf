@@ -25,28 +25,41 @@ int digit_func(va_list list)
  * @n: parameter
  * Return: count
  */
-int print_number(int n)
+int print_number(long n)
 {
-	static int count;
-
-	unsigned int x = 0;
+	unsigned int b;
+	unsigned int reverseN = 0;
+	int count = 0;
 
 	if (n < 0)
 	{
-		n = n * -1;
-
-		x = n;
 		_putchar('-');
 		count++;
+		n = -n;
 	}
-	else
-		x = n;
 
-	if (x / 10)
-		print_number(x / 10);
+	b = n;
 
-	_putchar((x % 10) + '0');
-	count++;
+	while (n > 0)
+	{
+		reverseN = reverseN * 10;
+		reverseN = reverseN + (n % 10);
+		n = n / 10;
+	}
+
+	while (reverseN != 0)
+	{
+		_putchar(reverseN % 10 + '0');
+		count++;
+		reverseN = reverseN / 10;
+	}
+
+	while (b % 10 == 0)
+	{
+		_putchar('0');
+		count++;
+		b = b / 10;
+	}
 
 	return (count);
 }
