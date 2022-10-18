@@ -1,5 +1,6 @@
 Group Project - Our Own printf
-	Authors - Oluwatobi Amure, Ononiwu Wisdom.
+
+Authors - Oluwatobi Amure, Ononiwu Wisdom.
 
 A project to make our own printf function, as a fufillment of part of the requirements of the Full Stack Software Engineering programme offered by African Leadership Xcellerator (ALX), an arm of the African Leadership Group (ALG) which recently acquired the Holberton School of coding.
 
@@ -20,30 +21,48 @@ Resources
 Read or watch:
 
 Secrets of printf
-Group Projects concept page (Don’t forget to read this)
-Flowcharts concept page
-man or help:
 
+Group Projects concept page (Don’t forget to read this)
+
+Flowcharts concept page
+
+man or help:
 printf (3)
+
 Requirements
+
 General
+
 Allowed editors: vi, vim, emacs
+
 All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
+
 All your files should end with a new line
+
 A README.md file, at the root of the folder of the project is mandatory
+
+
 Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
+
 You are not allowed to use global variables
+
 No more than 5 functions per file
+
 In the following examples, the main.c files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own main.c files at compilation. Our main.c files might be different from the one shown in the examples
+
 The prototypes of all your functions should be included in your header file called main.h
+
 Don’t forget to push your header file
+
 All your header files should be include guarded
+
 Note that we will not provide the _putchar function for this project
 
 Important Instructions Concerning Group Projects on Github
 
 Both partners need to have equal as possible git commits to the master branch as possible; the farther 
 from “equal”, the overall score of the project will decrease.
+
 Equal as possible == no more than a 40/60 contribution from the respective partner’s user name (this will be different in the off chance of a third member)
 
 Also, there should be one project repository per group. The other members do not fork or clone the project to ensure only one of the team has the repository in their github account otherwise you risk scoring 0%
