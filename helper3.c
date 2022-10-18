@@ -56,7 +56,7 @@ int stringupperCase_func(va_list list)
  */
 int hex_lower_func(va_list list)
 {
-	unsigned long int num = va_arg(list, unsigned int);
+	int num = va_arg(list, unsigned int);
 	int a = convert(num, 16, 0, 1);
 
 	return (a);
