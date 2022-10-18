@@ -7,14 +7,41 @@
  */
 int digit_func(va_list list)
 {
-	int numLen = -1;
-	int a = va_arg(list, int);
+	unsigned int m;
+	int i = 0, k = 0, n = 0, count = 0;
 
-	if (a <= INT_MAX && a >= INT_MIN)
+	n = va_arg(list, int);
+	if (n <= INT_MAX && n >= INT_MIN)
 	{
-		numLen = print_number(a);
+		if (n < 0)
+		{
+			n *= -1;
+			_putchar('-');
+			count += 1;
+		}
+		m = n;
+		for (k = 0; (m / 10) > 0; k++)
+			m /= 10;
+
+		m = n;
+		while (k != 0)
+		{
+			for (i = 0; i < k; i++)
+				m /= 10;
+			m %= 10;
+			_putchar(m + '0');
+			count++;
+			k--;
+			m = n;
+		}
+		_putchar(m % 10 + '0');
+		count++;
 	}
-	return (numLen);
+	else
+	{
+		return (-1);
+	}
+	return (count);
 }
 /**
  * print_number - prints signed numbers
@@ -46,6 +73,7 @@ int print_number(long int n)
 
 	return (count);
 }
+
 /**
  * _putchar - prints a char to stdout
  * @c: char to print
