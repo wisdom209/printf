@@ -1,5 +1,6 @@
 #include "main.h"
 
+int _loopExtraction(Choice choice[], const char *format, int size, int *i, va_list list, int *count);
 /**
  * nextFunction - next function
  * @current: current format
@@ -32,8 +33,7 @@ LoopReturn nextFuncton(const char *current, Choice check, int i, va_list list)
  */
 int get_function(const char *format, va_list list, Choice choice[], int size)
 {
-	int i = 0, j = 0, count = 0, num = 0;
-	/* LoopReturn lp; */
+	int i = 0, count = 0;
 
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
@@ -44,26 +44,50 @@ int get_function(const char *format, va_list list, Choice choice[], int size)
 		}
 		else
 		{
-			for (j = 0; j < size; j++)
-			{
-				if (choice[j].specifier)
-				{
-					if (format[i + 1] == choice[j].specifier[0] && !choice[j].specifier[1])
-					{
-						num = choice[j].f(list);
-						count += num;
-						i += 1;
-						break;
-					}
-				}
-				if (choice[j].specifier && choice[j].specifier[1])
-				{
-					nextFuncton(format, choice[j], i, list);
-				}
-			}
+			int a = _loopExtraction(choice, format, size, &i, list, &count);
+
+			if (a < 0)
+				return (-1);
 		}
 	}
 	if (format == NULL)
 		return (-1);
 	return (count);
+}
+
+
+int _loopExtraction(Choice choice[], const char *format, int size, int *i, va_list list, int *count)
+{
+	int j = 0, num = 0;
+
+	for (j = 0; j < size; j++)
+	{
+		if (choice[j].specifier)
+		{
+			if (format[*i + 1] == choice[j].specifier[0] && !choice[j].specifier[1])
+			{
+				num = choice[j].f(list);
+				*count += num;
+				*i += 1;
+				break;
+			}
+		}
+		if (choice[j].specifier && choice[j].specifier[1])
+		{
+			/* nextFuncton(format, choice[j], i, list); */
+		}
+		if (choice[j].specifier == NULL && format[*i + 1] != ' ')
+		{
+			if (format[*i + 1] != 0)
+			{
+				_putchar(format[*i]);
+				_putchar(format[*i + 1]);
+				*count += 2;
+				*i += 1;
+			}
+			else
+				return (-1);
+		}
+	}
+	return (0);
 }
