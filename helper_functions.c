@@ -67,6 +67,9 @@ int plus_func_ptr(va_list list)
 /**
  * width_func - handles field width
  * @list: list args
+ * @width: width parameter received
+ * @flag: check for minus flag
+ * 
  * Return: value
  */
 int width_func(va_list list, int width, int flag, char match, Choice choice[])
