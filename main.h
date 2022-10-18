@@ -45,6 +45,7 @@ LoopReturn nextFuncton(const char *current, Choice check, int i, va_list list);
 int get_function(const char *format, va_list list, Choice choice[], int size);
 
 /* helper.4 */
+int print_int_func(int num);
 int space_func_num(va_list list);
 int space_func_ptr(va_list list);
 int mod_octal_func(va_list list);
