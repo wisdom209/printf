@@ -23,6 +23,9 @@ int stringupperCase_func(va_list list)
 	int i = 0;
 	int count = 0;
 
+	if (s == NULL)
+		return (write(1, "(null)", 6));
+
 	while (s[i] != '\0')
 	{
 		if (!(s[i] > 32 && s[i] < 127))
