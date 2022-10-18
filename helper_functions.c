@@ -9,6 +9,15 @@ int ptr_func(va_list list)
 	int count = 0;
 	uintptr_t ptr = (uintptr_t)va_arg(list, void *);
 
+	if (ptr == NULL)
+	{
+		char *s = "nill";
+
+		while (s[count] != '\0')
+			count++;
+		return (count);
+	}
+
 	_putchar('0');
 	_putchar('x');
 	count = convert(ptr, 16, 0, 1);
