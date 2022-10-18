@@ -66,7 +66,7 @@ int plus_func_ptr(va_list list)
 
 /**
  * width_func - handles field width
- * @list: list args
+ * @list: pointer to list arguments
  * @width: width parameter received
  * @flag: check for minus flag
  * @match: check for match
