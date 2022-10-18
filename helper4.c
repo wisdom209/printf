@@ -1,6 +1,42 @@
 #include "main.h"
 
 /**
+ * print_int_func - prints an integer
+ * @n: integer to print
+ *
+ * Return: length of string printed
+ */
+int print_int_func(int n)
+{
+	int count = 0, m = 0, k = 0, i = 0;
+
+	if (n < 0)
+	{
+		n *= -1;
+		_putchar('-');
+		count += 1;
+	}
+	m = n;
+	for (k = 0; (m / 10) > 0; k++)
+		m /= 10;
+
+	m = n;
+	while (k != 0)
+	{
+		for (i = 0; i < k; i++)
+			m /= 10;
+		m %= 10;
+		_putchar(m + '0');
+		count++;
+		k--;
+		m = n;
+	}
+	_putchar(m % 10 + '0');
+	count++;
+
+	return (count);
+}
+/**
  * space_func_num - space num
  * @list: list args
  * Return: num
