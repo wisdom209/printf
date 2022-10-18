@@ -6,7 +6,20 @@ A project to make our own printf function, as a fufillment of part of the requir
 
 This project mimics the printf function from the C standard library. 
 
-For a detailed information on the use and functionaity, read the manual; **man_3_printf** provided in this repository.
+For a detailed information on the functionaity, read the manual; **man_3_printf** provided in this repository.
+## Usage
+It is important to note that you will need your main files to use this project
+
+Assuming that your main file is **main.c**, here are the steps to follow. 
+
+Clone the repository using ```git clone <repo url>``` on the command line. 
+
+Navigate to the repository directory using ```cd printf``` on the command line. 
+
+Compile to an object file using ```gcc main.c _printf.c -o filename``` on the command line. 
+
+Run the program with```./filename``` on the command line. 
+
 
 ## Concepts
 For this project, we expect you to look at these concepts:
