@@ -80,6 +80,7 @@ int width_func(va_list list, int width, int minus_flag, char sp_match, Choice ch
 			if (sp_match == choice[i].specifier[0])
 			{
 				count = choice[i].f;
+				break;
 			}
 		}
 		for (j = 0; j < width; j++)
@@ -100,10 +101,11 @@ int width_func(va_list list, int width, int minus_flag, char sp_match, Choice ch
 			if (specifier == choice[i].specifier[0])
 			{
 				count += choice[i].f;
+				break;
 			}
 		}
 	}
-
+	return (count);
 }
 /**
  * write_buffer - buffer to reduce write call
