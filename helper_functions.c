@@ -93,12 +93,13 @@ int width_func(va_list list, int width, int minus_flag, char sp_match, Choice ch
 		for (j = 0; j < width; j++)
 		{
 			_putchar(' ');
+			count++;
 		}
 		for (i = 0; choice[i].specifier != NULL; i++)
 		{
 			if (specifier == choice[i].specifier[0])
 			{
-				count = choice[i].f;
+				count += choice[i].f;
 			}
 		}
 	}
