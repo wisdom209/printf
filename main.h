@@ -72,4 +72,8 @@ int _putchar(char c);
 int char_func(va_list list);
 int str_func(va_list list);
 
+/* helper5.c */
+int plus_dig_func(va_list list);
+int plus_ptr_func(va_list list);
+
 #endif

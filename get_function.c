@@ -1,8 +1,8 @@
 #include "main.h"
 
 int _loopExtraction(Choice choice[], const char *format, int size,
-int *i,
-va_list list, int *count);
+					int *i,
+					va_list list, int *count);
 /**
  * nextFunction - next function
  * @current: current format
@@ -57,7 +57,6 @@ int get_function(const char *format, va_list list, Choice choice[], int size)
 	return (count);
 }
 
-
 /**
  * _loopExtraction -  extracts loop
  * @choice: choice arr
@@ -70,7 +69,7 @@ int get_function(const char *format, va_list list, Choice choice[], int size)
  * Return: -1 if unsuccessful
  */
 int _loopExtraction(Choice choice[], const char *format, int size, int *i,
-va_list list, int *count)
+					va_list list, int *count)
 {
 	int j = 0, num = 0;
 
@@ -86,9 +85,12 @@ va_list list, int *count)
 				break;
 			}
 		}
-		if (choice[j].specifier && choice[j].specifier[1])
+		if (format[*i + 1] == '+' && (format[*i + 2] == choice[j].specifier[1]))
 		{
-			/* nextFuncton(format, choice[j], i, list); */
+			num = choice[j].f(list);
+			*count += num;
+			*i += 2;
+			break;
 		}
 		if (choice[j].specifier == NULL && format[*i + 1] != ' ')
 		{
