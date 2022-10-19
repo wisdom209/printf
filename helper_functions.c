@@ -83,7 +83,7 @@ int width_func(va_list list, int width, int flag, char match, Choice choice[])
 		{
 			if (match == choice[i].specifier[0])
 			{
-				count = choice[i].f;
+				count = choice[i].f(list);
 				break;
 			}
 		}
@@ -102,9 +102,11 @@ int width_func(va_list list, int width, int flag, char match, Choice choice[])
 		}
 		for (i = 0; choice[i].specifier != NULL; i++)
 		{
-			if (specifier == choice[i].specifier[0])
+			if (match == choice[i].specifier[0])
 			{
-				count += choice[i].f;
+				int a = choice[i].f(list);
+
+				count += a;
 				break;
 			}
 		}

@@ -35,7 +35,7 @@ typedef struct Choice
 int _printf(const char *format, ...);
 
 /* helper_functions  */
-int width_func(va_list list);
+int width_func(va_list list, int width, int flag, char match, Choice choice[]);
 int _putchar(char c);
 int print_char(va_list list);
 int ptr_func(va_list list);
